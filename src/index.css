@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navbar-height: 76px;
+}
+
+section {
+    scroll-margin-top: var(--navbar-height);
+}
+
+[data-theme="dark"] .nav-link {
+  color: #facc15;
+}
+
+[data-theme="light"] .nav-link {
+  color: #1d4ed8;
+}
+
+/* Hover efekt */
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+/* Active / klik efekt */
+.nav-link:active {
+  opacity: 0.6;
+}
