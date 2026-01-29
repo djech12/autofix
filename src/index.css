@@ -10,11 +10,11 @@ section {
     scroll-margin-top: var(--navbar-height);
 }
 
-[data-theme="dark"] .nav-link {
+[data-theme="dark"] .var1 {
   color: #facc15;
 }
 
-[data-theme="light"] .nav-link {
+[data-theme="light"] .var1 {
   color: #1d4ed8;
 }
 
@@ -26,6 +26,24 @@ section {
 [data-theme="light"] .cta-button {
   background-color: #1d4ed8;
 }
+
+[data-theme="dark"] .service-icon {
+  background-color: #facc15;
+}
+
+[data-theme="light"] .service-icon {
+  background-color: #1d4ed8;
+}
+
+[data-theme="dark"] .service-card {
+  border-color: #facc15;
+}
+
+[data-theme="light"] .service-card {
+  border-color: #1d4ed8;
+}
+
+
 
 /* Hover efekt */
 .nav-link:hover {

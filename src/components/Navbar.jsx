@@ -8,8 +8,8 @@ const Navbar = () => {
   const sections = [
     { name: "Domů", id: "home" },
     { name: "Služby", id: "services" },
-    { name: "O nás", id: "about" },
-    { name: "Ceník", id: "pricing" },
+    { name: "O servisu", id: "about" },
+    { name: "Náš tým", id: "team" },
     { name: "Kontakt", id: "contact" },
   ];
 
@@ -47,10 +47,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-base-300 shadow-sm py-[6px]">
+    <nav className="sticky top-0 z-50 bg-base-300 shadow-md py-[6px]">
       <div className="navbar container mx-auto px-4">
         <div className="flex-1">
-          <a href=" " className="btn btn-ghost hover:bg-transparent hover:shadow-none text-4xl italic nav-link">
+          <a href=" " className="btn btn-ghost hover:bg-transparent hover:shadow-none text-4xl italic var1">
             AutoFix
           </a>
         </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
               <li key={sec.id}>
                 <a
                   onClick={() => handleScroll(sec.id)}
-                  className={`nav-link cursor-pointer transition ${active === sec.id ? "underline font-bold" : ""}`}
+                  className={`var1 cursor-pointer transition ${active === sec.id ? "underline font-bold" : ""}`}
                 >
                   {sec.name}
                 </a>
