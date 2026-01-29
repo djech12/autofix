@@ -27,8 +27,8 @@ export default {
           secondary: "#22d3ee",
           accent: "#f59e0b",
 
-          "base-100": "#f5f5f5",
-          "base-200": "#f5f5f5",
+          "base-100": "#0f172a",
+          "base-200": "#0f172a",
           "base-content": "#1f2937",
 
           neutral: "#111827",

@@ -18,6 +18,15 @@ section {
   color: #1d4ed8;
 }
 
+[data-theme="dark"] .cta-button {
+  background-color: #facc15;
+  color: #15191e;
+}
+
+[data-theme="light"] .cta-button {
+  background-color: #1d4ed8;
+}
+
 /* Hover efekt */
 .nav-link:hover {
   opacity: 0.8;

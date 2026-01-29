@@ -47,7 +47,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-base-100 shadow-sm py-[6px]">
+    <nav className="sticky top-0 z-50 bg-base-300 shadow-sm py-[6px]">
       <div className="navbar container mx-auto px-4">
         <div className="flex-1">
           <a href=" " className="btn btn-ghost hover:bg-transparent hover:shadow-none text-4xl italic nav-link">

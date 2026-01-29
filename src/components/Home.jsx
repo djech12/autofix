@@ -26,9 +26,28 @@ const Home = () => {
             Rychlá diagnostika, férové ceny a profesionální přístup.
           </p>
 
-          <button className="btn btn-primary">
-            Objednat servis
-          </button>
+          <a
+            href="tel:+420777888999"
+            className="
+              cta-button
+              btn btn-primary
+              text-lg
+              px-10
+              font-semibold
+              tracking-wide
+              hover:scale-105
+              active:scale-95
+              transition-all
+              duration-200
+              shadow-xl
+            "
+          >
+            Zavolat +420 777 888 999
+          </a>
+
+          <p className="mt-3 text-sm opacity-80">
+            Po–Pá 8:00–17:00 <span className="mx-2 nav-link">•</span> U Servisu 12, Praha 8
+          </p>
         </div>
       </div>
     </section>
