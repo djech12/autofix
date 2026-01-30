@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import ThemeToggle from "./Theme/ThemeToggle";
 import Home from "./components/Home";
 import Services from "./components/Services";
-import AboutUs from "./components/AboutServis";
+import AboutServis from "./components/AboutServis";
 import Prices from "./components/Team";
 import Contact from "./components/Contact";
 
@@ -17,7 +17,7 @@ const App = () => {
       {/* příklad sekcí pro scroll */}
       <Home></Home>
       <Services></Services>
-      <section id="about" className="h-screen bg-gray-300">O nás</section>
+      <AboutServis></AboutServis>
       <section id="pricing" className="h-screen bg-gray-400">Ceník</section>
       <section id="contact" className="h-screen bg-gray-500">Kontakt</section>
     </div>

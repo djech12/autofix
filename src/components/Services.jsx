@@ -47,7 +47,7 @@ const Services = () => {
         Naše služby
       </h2>
 
-      <div className="flex justify-evenly flex-wrap gap-18 md:gap-8">
+      <div className="flex justify-evenly flex-wrap gap-18 md:gap-4">
         {services.map((service) => {
           const Icon = service.icon;
 
