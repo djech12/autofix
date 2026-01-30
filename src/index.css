@@ -6,6 +6,7 @@
   --navbar-height: 76px;
 }
 
+
 section {
     scroll-margin-top: var(--navbar-height);
 }
