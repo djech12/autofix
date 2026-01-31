@@ -44,7 +44,7 @@ const Services = () => {
       style={{ minHeight: "calc(100vh - 76px)" }}
     >
       <h2 className="var1 text-5xl font-bold text-center mb-28 pt-24">
-        Naše služby
+        Služby
       </h2>
 
       <div className="flex justify-evenly flex-wrap gap-18 md:gap-4">

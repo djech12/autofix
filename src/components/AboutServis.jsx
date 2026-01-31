@@ -3,6 +3,7 @@ import CarBlue from '../assets/car-accesories-animate.svg?react'
 import CarYellow from '../assets/car-accesories-animate-2.svg?react'
 import CustomerBlue from "../assets/customer-blue.svg?react"
 import CustomerYellow from "../assets/customer-yellow.svg?react"
+import { Dot } from 'lucide-react'
 
 
 const AboutServis = () => {
@@ -55,14 +56,14 @@ const AboutServis = () => {
     >
       <div className='flex flex-col-reverse lg:flex-row justify-evenly pt-16'>
         <div className='max-w-xl'>
-          <h2 className='var1 text-6xl text-start font-bold mb-8 lg:mb-14 ml-6 lg:ml-0 mt-20 lg:mt-0'>O servisu</h2>
-          <p className='text-lg px-6 lg:px-0'>
+          <h2 className='var1 text-6xl text-start font-bold lg:px-4 mb-8 lg:mb-14 ml-6 lg:ml-0 mt-20 lg:mt-0'>O servisu</h2>
+          <p className='text-lg px-6 lg:px-4'>
             AutoFix je moderní lokální autoservis zaměřený na kvalitní, rychlé a férové služby pro všechny typy osobních vozů. 
             Díky dlouholetým zkušenostem a neustálému vzdělávání našeho týmu dokážeme řešit běžnou údržbu i složitější technické problémy.
             Pracujeme s ověřenými postupy, kvalitními díly a klademe důraz na bezpečnost i dlouhou životnost vašeho vozu.
           </p>
 
-          <p className="mt-4 text-lg px-6 lg:px-0">
+          <p className="mt-4 text-lg px-6 lg:px-4">
             Věříme v otevřenou komunikaci se zákazníky – před každým zásahem vás vždy informujeme o rozsahu práce, ceně a doporučeném řešení.
             Naším cílem není jen oprava auta, ale dlouhodobá spolupráce založená na důvěře, spolehlivosti a osobním přístupu.
             Ať už přijedete na pravidelný servis nebo rychlou kontrolu, postaráme se o váš vůz, jako by byl náš vlastní.
@@ -71,27 +72,29 @@ const AboutServis = () => {
         {/* Auto */}
         <div className="relative flex justify-center z-10">
           {theme === 'dark' ? (
-            <CarYellow className={`size-96 ${isVisible ? 'animated' : ''} duration-500`} />
+            <CarYellow className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''} duration-500`} />
           ) : (
-            <CarBlue className={`w-[500px] ${isVisible ? 'animated' : ''} duration-500`} />
+            <CarBlue className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''} duration-500`} />
           )}
         </div>
       </div>
-      <div>
+      <div className='flex flex-col lg:flex-row justify-evenly gap-8 md:gap-0 items-center pt-8 md:pt-16 mb-14 md:mb-24'>
         {/* Customer */}
         <div className="relative flex justify-center z-10">
           {theme === 'dark' ? (
-            <CustomerYellow className={`size-96 ${isVisible ? 'animated' : ''}`} />
+            <CustomerYellow className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''}`} />
           ) : (
-            <CustomerBlue className={`w-[500px] ${isVisible ? 'animated' : ''}`} />
+            <CustomerBlue className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''}`} />
           )}
         </div>
-        <div>
-          <ul>
-            <li>Individuální přístup ke každému vozu a zákazníkovi</li>
-            <li>Transparentní ceny a žádné skryté poplatky</li>
-            <li>Rychlý servis bez dlouhého čekání</li>
-            <li>Profesionální tým s více než 10 lety zkušeností</li>
+        <div className='ul-card'>
+          <div class="bg bg-base-300 shadow-lg"></div>
+          <div class="blob"></div>
+          <ul className='z-10 flex flex-col justify-center gap-1 md:gap-4 font-bold md:text-lg pl-2'>
+            <li className='flex flex-row'><Dot className='var1 size-8'/>individuální přístup ke každému vozu a zákazníkovi</li>
+            <li className='flex flex-row'><Dot className='var1 size-8'/>transparentní ceny a žádné skryté poplatky</li>
+            <li className='flex flex-row'><Dot className='var1 size-8'/>rychlý servis bez dlouhého čekání</li>
+            <li className='flex flex-row'><Dot className='var1 size-8'/>profesionální tým s více než 10 lety zkušeností</li>
           </ul>
         </div>
       </div>
