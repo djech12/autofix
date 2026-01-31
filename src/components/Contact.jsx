@@ -1,34 +1,134 @@
-// Contact.jsx
-import React from "react";
-
-const contacts = [
-  {
-    name: "Whatsapp",
-    svgPath: "M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z",
-    link: "https://wa.me/1234567890",
-  },
-  {
-    name: "Email",
-    svgPath: "M1.5 3.75l6.5 4.25 6.5-4.25M1.5 3.75v8.5h13v-8.5M1.5 3.75l6.5 4.25 6.5-4.25",
-    link: "mailto:example@email.com",
-  },
-  {
-    name: "LinkedIn",
-    svgPath: "M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.71-.521-1.248-1.342-1.248-.82 0-1.358.538-1.358 1.248 0 .694.52 1.248 1.327 1.248h.015zm4.908 8.212V9.359c0-.215.015-.429.08-.582.175-.429.574-.874 1.244-.874.877 0 1.228.66 1.228 1.628v4.49h2.4v-4.825c0-2.58-1.378-3.782-3.218-3.782-1.49 0-2.145.823-2.516 1.403h.035V6.169h-2.4c.03.65 0 7.225 0 7.225h2.4z",
-    link: "https://www.linkedin.com/in/example",
-  },
-];
+import React, { useState } from "react"
+import { PhoneCall, Facebook, Instagram, Mail, Copy, Check } from "lucide-react"
 
 const Contact = () => {
+  const serviceEmail = "info@autoservis.cz"
+  const servicePhone = "+420777888999"
+
+  const [copied, setCopied] = useState("")
+
+  const copyToClipboard = (text, label) => {
+    navigator.clipboard.writeText(text)
+    setCopied(label)
+
+    setTimeout(() => {
+      setCopied("")
+    }, 1800)
+  }
+
   return (
     <section
       id="contact"
-      className="contact bg-base-300"
+      className="contact bg-base-300 relative"
       style={{ minHeight: "calc(100vh - 76px)" }}
-    > 
-    
-    </section>
-  );
-};
+    >
+      <h2 className="var1 text-5xl font-bold text-center pt-24 mb-20">
+        Kontaktujte nás
+      </h2>
 
-export default Contact;
+      <div className="flex flex-col lg:flex-row gap-16 justify-center px-6 pb-24">
+
+        {/* FORMULÁŘ */}
+        <div className="card bg-base-100 w-full max-w-md shadow-md">
+          <div className="card-body gap-4">
+
+            <h3 className="text-2xl font-bold text-center mb-4">
+              Napište nám
+            </h3>
+
+            <input
+              type="text"
+              placeholder="Vaše jméno"
+              className="input w-full"
+            />
+
+            <input
+              type="email"
+              placeholder="Váš e-mail"
+              className="input w-full"
+            />
+
+            <div className="flex gap-6 justify-center">
+              <label className="label cursor-pointer gap-2">
+                <input type="radio" name="type" className="radio var1" defaultChecked />
+                <span className="label-text">Dotaz</span>
+              </label>
+
+              <label className="label cursor-pointer gap-2">
+                <input type="radio" name="type" className="radio var1" />
+                <span className="label-text">Komentář</span>
+              </label>
+            </div>
+
+            <textarea
+              className="textarea textarea-bordered w-full h-32"
+              placeholder="Vaše zpráva"
+            />
+
+            <button className="cta-button text-base-300 flex items-center justify-center w-full h-12 px-8 py-2 text-sm font-medium rounded-full hover:opacity-80 transition">
+              Odeslat zprávu
+            </button>
+          </div>
+        </div>
+
+        {/* KONTAKTY + SOCIÁLNÍ SÍTĚ */}
+        <div className="flex flex-col gap-10 justify-center">
+
+          {/* Email */}
+          <div
+            onClick={() => copyToClipboard(serviceEmail, "E-mail zkopírován")}
+            className="flex items-center gap-4 cursor-pointer group"
+          >
+            <Mail className="group-hover:scale-110 transition" />
+            <span className="font-semibold">{serviceEmail}</span>
+            <Copy className="opacity-50 group-hover:opacity-100 transition" />
+          </div>
+
+          {/* Telefon */}
+          <div
+            onClick={() => copyToClipboard(servicePhone, "Telefon zkopírován")}
+            className="flex items-center gap-4 cursor-pointer group"
+          >
+            <PhoneCall className="group-hover:scale-110 transition" />
+            <span className="font-semibold">+420 777 888 999</span>
+            <Copy className="opacity-50 group-hover:opacity-100 transition" />
+          </div>
+
+          {/* Sociální sítě */}
+          <div className="flex gap-6 mt-4">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:scale-110 transition"
+            >
+              <Facebook size={28} />
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:scale-110 transition"
+            >
+              <Instagram size={28} />
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      {/* TOAST ALERT */}
+      {copied && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <div className="flex items-center gap-2 bg-neutral text-neutral-content px-5 py-3 rounded-xl shadow-lg animate-fade-in">
+            <Check size={18} />
+            <span>{copied}</span>
+          </div>
+        </div>
+      )}
+    </section>
+  )
+}
+
+export default Contact

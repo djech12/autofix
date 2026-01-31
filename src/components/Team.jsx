@@ -67,6 +67,16 @@ const Team = () => {
     }
   ]
 
+  const skillLabels = {
+    van: "Dodávky",
+    motorbike: "Motorky",
+    brush: "Čištění",
+    wrench: "Mechanika",
+    drill: "Vrtání",
+    paint: "Lakování",
+    cable: "Elektrika",
+  }
+
   const renderIcon = (skill) => {
     switch (skill) {
       case "van": return <Van />

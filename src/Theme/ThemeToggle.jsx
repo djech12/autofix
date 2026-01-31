@@ -16,12 +16,12 @@ const ThemeToggle = () => {
 
       {/* slunce */}
       <div className="swap-off">
-        <Sun className="size-8"/>
+        <Sun className="size-10"/>
       </div>
 
       {/* měsíc */}
       <div className="swap-on">
-        <Moon className="size-8"/>
+        <Moon className="size-10"/>
       </div>
     </label>
   );

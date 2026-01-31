@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import AboutServis from "./components/AboutServis";
 import Team from "./components/Team";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <AboutServis></AboutServis>
       <Team></Team>
       <Contact></Contact>
+      <Footer></Footer>
     </div>
   );
 };
