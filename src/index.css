@@ -19,6 +19,79 @@ section {
   color: #1d4ed8;
 }
 
+[data-theme="dark"] .var2 {
+  color: #1d4ed8;
+}
+
+[data-theme="light"] .var2 {
+  color: #facc15;
+}
+
+[data-theme="dark"] .var3 {
+  background: linear-gradient(
+    120deg,
+    #fef08a,
+    #facc15,
+    #eab308,
+    #fde047
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+[data-theme="light"] .var3 {
+  background: linear-gradient(
+    120deg,
+    #93c5fd,
+    #3b82f6,
+    #1d4ed8,
+    #60a5fa
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.var3, .var4 {
+  animation: shine 4s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+[data-theme="dark"] .var4 {
+  background: linear-gradient(
+    120deg,
+    #fef08a,
+    #facc15,
+    #eab308,
+    #fde047
+  );
+}
+
+[data-theme="light"] .var4 {
+  background: linear-gradient(
+    120deg,
+    #93c5fd,
+    #3b82f6,
+    #1d4ed8,
+    #60a5fa
+  );
+}
+
+
 [data-theme="dark"] .cta-button {
   background-color: #facc15;
   color: #15191e;
@@ -139,3 +212,4 @@ section {
     height: 240px;
   }
 }
+

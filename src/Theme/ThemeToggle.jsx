@@ -6,7 +6,7 @@ const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <label className="var1 swap swap-rotate fixed bottom-4 right-4 z-50">
+    <label className="var2 swap swap-rotate fixed bottom-4 right-4 z-50">
       {/* checkbox ovládá stav */}
       <input
         type="checkbox"

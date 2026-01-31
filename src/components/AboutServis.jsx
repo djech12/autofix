@@ -10,6 +10,9 @@ const AboutServis = () => {
   const sectionRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
 
+  const customerRef = useRef(null)
+  const [isCustomerVisible, setIsCustomerVisible] = useState(false)
+
   const [theme, setTheme] = useState(
     document.documentElement.getAttribute('data-theme')
   )
@@ -47,6 +50,26 @@ const AboutServis = () => {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsCustomerVisible(true)
+          observer.disconnect()
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    )
+
+    if (customerRef.current) {
+      observer.observe(customerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section
       ref={sectionRef}
@@ -72,24 +95,24 @@ const AboutServis = () => {
         {/* Auto */}
         <div className="relative flex justify-center z-10">
           {theme === 'dark' ? (
-            <CarYellow className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''} duration-500`} />
+            <CarYellow className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''} duration-1000`} />
           ) : (
-            <CarBlue className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''} duration-500`} />
+            <CarBlue className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''} duration-1000`} />
           )}
         </div>
       </div>
       <div className='flex flex-col lg:flex-row justify-evenly gap-8 md:gap-0 items-center pt-8 md:pt-16 mb-14 md:mb-24'>
         {/* Customer */}
-        <div className="relative flex justify-center z-10">
+        <div ref={customerRef} className="relative flex justify-center z-10">
           {theme === 'dark' ? (
-            <CustomerYellow className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''}`} />
+            <CustomerYellow className={`w-[400px] md:w-[500px] ${isCustomerVisible ? 'animated' : ''}`} />
           ) : (
-            <CustomerBlue className={`w-[400px] md:w-[500px] ${isVisible ? 'animated' : ''}`} />
+            <CustomerBlue className={`w-[400px] md:w-[500px] ${isCustomerVisible ? 'animated' : ''}`} />
           )}
         </div>
         <div className='ul-card'>
-          <div class="bg bg-base-300 shadow-lg"></div>
-          <div class="blob"></div>
+          <div className="bg bg-base-300 shadow-lg"></div>
+          <div className="blob"></div>
           <ul className='z-10 flex flex-col justify-center gap-1 md:gap-4 font-bold md:text-lg pl-2'>
             <li className='flex flex-row'><Dot className='var1 size-8'/>individuální přístup ke každému vozu a zákazníkovi</li>
             <li className='flex flex-row'><Dot className='var1 size-8'/>transparentní ceny a žádné skryté poplatky</li>

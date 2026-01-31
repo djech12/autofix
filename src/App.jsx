@@ -5,7 +5,7 @@ import ThemeToggle from "./Theme/ThemeToggle";
 import Home from "./components/Home";
 import Services from "./components/Services";
 import AboutServis from "./components/AboutServis";
-import Prices from "./components/Team";
+import Team from "./components/Team";
 import Contact from "./components/Contact";
 
 const App = () => {
@@ -18,8 +18,8 @@ const App = () => {
       <Home></Home>
       <Services></Services>
       <AboutServis></AboutServis>
-      <section id="pricing" className="h-screen bg-gray-400">Ceník</section>
-      <section id="contact" className="h-screen bg-gray-500">Kontakt</section>
+      <Team></Team>
+      <Contact></Contact>
     </div>
   );
 };

@@ -74,7 +74,7 @@ const Navbar = () => {
         {/* Mobile dropdown */}
         <div className="md:hidden flex-none">
           <button
-            className="btn btn-square btn-ghost"
+            className="var1 btn btn-square btn-ghost"
             onClick={() => setOpen(!open)}
           >
             {open ? <X /> : <Menu />}
@@ -89,7 +89,7 @@ const Navbar = () => {
             <li key={sec.id}>
               <a
                 onClick={() => handleScroll(sec.id)}
-                className={`nav-link cursor-pointer text-lg transition ${active === sec.id ? "underline font-bold" : ""}`}
+                className={`var1 nav-link cursor-pointer text-lg transition ${active === sec.id ? "underline font-bold" : ""}`}
               >
                 {sec.name}
               </a>
